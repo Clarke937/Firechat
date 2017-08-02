@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="5dp"
+    android:orientation="vertical"
+    android:id="@+id/layout_chatbubble">
+
+
+
+    <LinearLayout
+        android:id="@+id/chatroom_bubble"
+        android:background="@drawable/bubble2_left"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/chatroom_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxEms="12"
+            android:padding="8dp"
+            android:layout_gravity="center"
+            android:text="@string/emilia"
+            android:textColor="#DDD" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/chatroom_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviado a las: 8:00 pm"
+        android:textSize="12dp"
+        android:textColor="#777"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        />
+
+
+</LinearLayout>

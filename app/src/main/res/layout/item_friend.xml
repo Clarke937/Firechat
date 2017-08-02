@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/frienditem_photo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/logo"
+        app:civ_border_color="@color/colorPrimaryDark"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/frienditem_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edgar Retana"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/primary_text"
+            />
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/frienditem_email"
+                android:layout_height="wrap_content"
+                android:text="Eretana60@gmail.com"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/frienditem_conexion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3h"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#FFF"
+                android:textAlignment="center"
+                android:backgroundTint="#27ae60"
+                android:background="@drawable/button_badge"
+                />
+
+        </TableRow>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="16dp"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        app:cardElevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/post_coordinator"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/post_bg"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/default_profile" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="normal"
+                android:src="@drawable/ic_dislike"
+                app:layout_anchorGravity="bottom"
+                android:layout_marginLeft="16dp"
+                app:layout_anchor="@id/post_bg"
+                android:tint="#FFF"
+                />
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="normal"
+                android:src="@drawable/ic_like"
+
+                app:layout_anchorGravity="bottom|end"
+                android:layout_marginRight="16dp"
+                app:layout_anchor="@id/post_bg"
+                android:tint="#FFF"
+                />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_anchor="@id/post_bg"
+                app:layout_anchorGravity="center_horizontal|bottom"
+                android:src="@drawable/profile"
+                app:civ_border_color="#FFF"
+                app:civ_border_width="3dp"
+                />
+
+
+
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_marginTop="205dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="50dp"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/postcard_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Prepare your Anus Cersei Lanister, You Gonna Die"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="#2d2d2d"
+                    android:textAlignment="center"
+                    />
+
+
+                <TextView
+                    android:id="@+id/postcard_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="@string/emilia"
+                    android:textColor="@color/secondary_text"
+                    android:layout_marginTop="10dp"
+                    />
+
+            </LinearLayout>
+
+        </android.support.design.widget.CoordinatorLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

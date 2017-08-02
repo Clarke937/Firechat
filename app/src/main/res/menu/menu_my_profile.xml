@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.eretana.firechat.Profile">
+
+    <item
+        android:id="@+id/action_edit_profile"
+        android:orderInCategory="200"
+        android:title="Editar Perfil"
+        android:icon="@drawable/ic_edituser"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_new_post"
+        android:orderInCategory="100"
+        android:title="Nueva Publicacion"
+        android:icon="@drawable/ic_postit"
+        app:showAsAction="ifRoom" />
+
+
+</menu>

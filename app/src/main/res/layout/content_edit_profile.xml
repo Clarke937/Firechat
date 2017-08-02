@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.eretana.firechat.Edit_profile"
+    tools:showIn="@layout/activity_edit_profile">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/edituser_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/default_pic"
+                android:layout_centerHorizontal="true"
+                android:stateListAnimator="@android:anim/cycle_interpolator"
+                app:civ_border_color="#FFF"
+                />
+
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_centerHorizontal="true"
+                >
+
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fabSize="mini"
+                    android:src="@drawable/ic_pencil"
+                    android:tint="#FFF"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:elevation="0dp"
+                    android:layout_margin="10dp"
+                    android:onClick="change_photo"
+                    />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="Informacion Personal"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edad (18 - 99)"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_marginTop="15dp"
+            />
+
+        <Spinner
+            android:id="@+id/edituser_spin_edad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            ></Spinner>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:text="Genero o Sexo:"
+            />
+
+        <RadioGroup
+            android:id="@+id/radiogroup_sex"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/sexrb_hombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hombre"
+                android:checked="true"
+                />
+
+            <RadioButton
+                android:id="@+id/sexrb_mujer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mujer"
+                />
+
+            <RadioButton
+                android:id="@+id/sexrb_otro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Otro"
+                />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:text="Pais de Origen:"
+            />
+
+        <Spinner
+            android:id="@+id/edituser_spin_country"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripcion breve de ti:"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            />
+
+        <EditText
+            android:id="@+id/edituser_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Intereses"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/edituser_intereses_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
+
+
+

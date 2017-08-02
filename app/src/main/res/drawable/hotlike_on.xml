@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawableTint="@color/colorPrimaryDark"></item>
+    <item android:textColor="@color/colorPrimaryDark"></item>
+    <item android:stateListAnimator="@android:anim/overshoot_interpolator"></item>
+    <item android:backgroundTint="#FFF"></item>
+</selector>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingBottom="16dp"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/lovefinder_results_addbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_friend"
+                android:layout_alignParentRight="true"
+                android:tint="#666"
+                android:backgroundTint="#FFF"
+                android:stateListAnimator="@android:anim/cycle_interpolator"
+                />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/lovefinder_results_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                app:civ_border_color="#777"
+                app:civ_border_width="3dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/default_image"
+                />
+
+            <TextView
+                android:id="@+id/lovefinder_results_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="NOMBRE DE USUARIO"
+                android:layout_below="@id/lovefinder_results_image"
+                android:textAlignment="center"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                />
+            
+            <TableRow
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/lovefinder_results_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/lovefinder_results_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="25 Años | El Salvador"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    />
+
+            </TableRow>
+            
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

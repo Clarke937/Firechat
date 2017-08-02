@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.eretana.firechat.Chatroom"
+    android:background="#EEE"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <LinearLayout
+            android:id="@+id/chatroom_bottombox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_alignParentLeft="true"
+            android:padding="7dp"
+            android:background="#FFF"
+            >
+
+            <EditText
+                android:id="@+id/chatroom_input"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:textColor="#2d2d2d"
+                android:hint="Escribe tu mensaje..."
+                android:background="@drawable/rounded_editext"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                />
+
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/chatroom_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"
+                app:elevation="0dp"
+                android:src="@drawable/ic_menu_send"
+                android:tint="#FFF"
+                app:backgroundTint="@color/colorPrimaryDark"
+                />
+
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/chatroom_listview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:layout_above="@id/chatroom_bottombox"
+            android:stackFromBottom="true"
+            android:transcriptMode="alwaysScroll"
+            android:paddingTop="10dp"
+            />
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+

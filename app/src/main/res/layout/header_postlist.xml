@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardElevation="3dp"
+        app:contentPadding="16dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <Button
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_friends_gray"
+                    android:text="250k"
+                    android:stateListAnimator="@android:anim/cycle_interpolator"
+                    android:backgroundTint="#FFF"
+                    />
+
+
+                <Button
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_camera_gray"
+                    android:text="250k"
+                    android:stateListAnimator="@android:anim/overshoot_interpolator"
+                    android:backgroundTint="#FFF"
+                    />
+
+                <Button
+                    android:id="@+id/btn_hotlike"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_hot_black"
+                    android:text="250k"
+                    android:stateListAnimator="@android:anim/overshoot_interpolator"
+                    android:backgroundTint="#FFF"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

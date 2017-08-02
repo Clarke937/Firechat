@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/item_chat_civ"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/profile"
+            app:civ_border_width="2dp"
+            android:layout_centerInParent="true"
+            />
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/item_chat_conexion"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_circle"
+            android:tint="@color/colorGreen"
+            app:civ_border_width="2dp"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:paddingLeft="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/item_chat_username"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="USERNAME"
+                android:textStyle="bold"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:ellipsize="end"
+                android:lines="1"
+                />
+
+            <TextView
+                android:id="@+id/item_chat_timer"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="50 m"
+                android:textAlignment="center"
+                android:background="@drawable/circle_button"
+                android:backgroundTint="#666"
+                android:textColor="#FFF"
+                />
+
+        </TableRow>
+
+
+
+        <TextView
+            android:id="@+id/item_chat_last_msj"
+            android:layout_marginTop="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emilia"
+            android:lines="2"
+            android:ellipsize="end"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

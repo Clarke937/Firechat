@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="#FFF"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/postitem_civ"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/profile"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/colorAccent"
+            />
+
+        <TextView
+            android:id="@+id/postitem_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=""
+            android:lines="1"
+            android:ellipsize="end"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_gravity="center_vertical"
+            />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/postitem_image"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/profile_bg"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/postitem_text"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_post"
+        android:textColor="#666"
+        android:text="@string/emilia"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:visibility="gone"
+        />
+
+    <TableRow android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/postitem_like"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:fabSize="mini"
+            app:elevation="0dp"
+            app:backgroundTint="#20000000"
+            android:tint="#000"
+            android:src="@drawable/ic_lineal_heart"
+            />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/postitem_comment"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:fabSize="mini"
+            app:elevation="0dp"
+            app:backgroundTint="#20000000"
+            android:tint="#000"
+            android:src="@drawable/ic_comment"
+            android:layout_marginLeft="10dp"
+            />
+
+    </TableRow>
+
+
+</LinearLayout>
