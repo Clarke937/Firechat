@@ -55,20 +55,20 @@
         <activity
             android:name=".Post_viewer"
             android:label="@string/title_activity_post_viewer"
-            android:parentActivityName=".Profile"
+            android:parentActivityName=".Perfil"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.eretana.firechat.Profile" />
+                android:value="com.eretana.firechat.Perfil" />
         </activity>
         <activity
             android:name=".Edit_profile"
             android:label="@string/title_activity_edit_profile"
-            android:parentActivityName=".Profile"
+            android:parentActivityName=".Perfil"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.eretana.firechat.Profile" />
+                android:value="com.eretana.firechat.Perfil" />
         </activity>
         <activity android:name=".Requests" />
         <activity
@@ -99,7 +99,12 @@
                 android:value="com.eretana.firechat.Miniapp_lovefinder" />
         </activity>
         <activity android:name=".Perfil"
+            android:label="Perfil"
+            android:parentActivityName=".Application"
             android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eretana.firechat.Application"/>
         </activity>
     </application>
 

@@ -90,7 +90,7 @@ public class Post_viewer extends AppCompatActivity implements ValueEventListener
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:
-                Intent intent = new Intent(this,Profile.class);
+                Intent intent = new Intent(this,Perfil.class);
                 intent.putExtra("uid",uid);
                 startActivity(intent);
             break;

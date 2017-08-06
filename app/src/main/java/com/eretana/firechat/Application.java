@@ -178,15 +178,14 @@ public class Application extends AppCompatActivity implements NavigationView.OnN
             break;
 
             case R.id.nav_profile:
-                Intent intent = new Intent(this,Profile.class);
-                intent.putExtra("uid",Session.fb_auth.getCurrentUser().getUid());
+                Intent intent = new Intent(this,Perfil.class);
+                intent.putExtra("uid",Session.getUid());
                 startActivity(intent);
             break;
 
             case R.id.nav_apps:
-                /*fragment = new Fragment_Entretenimiento();
-                this.setTitle("Entretenimiento");*/
-                startActivity(new Intent(this,Perfil.class));
+                fragment = new Fragment_Entretenimiento();
+                this.setTitle("Entretenimiento");
             break;
         }
 

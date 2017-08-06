@@ -17,9 +17,6 @@ import com.eretana.firechat.utils.Timestamp_utils;
 
 import java.util.List;
 
-/**
- * Created by Edgar on 22/7/2017.
- */
 
 public class Adapter_Conversaciones extends BaseAdapter implements View.OnClickListener{
 
@@ -75,12 +72,10 @@ public class Adapter_Conversaciones extends BaseAdapter implements View.OnClickL
     @Override
     public void onClick(View v) {
         Conversation con = (Conversation) v.getTag();
-
         Intent intent = new Intent(context, Chatroom.class);
         intent.putExtra("chatkey",con.getChatkey());
         intent.putExtra("friendname",con.getUsername());
         intent.putExtra("frienduid",con.getUid());
         context.startActivity(intent);
-        //Snackbar.make(v,key,Snackbar.LENGTH_LONG).show();
     }
 }

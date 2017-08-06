@@ -10,6 +10,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -116,8 +117,8 @@ public class Profile extends AppCompatActivity implements ValueEventListener{
     }
 
     public void populate_listview(Bitmap b){
-        adapter = new Adapter_Post(publicaciones,this,b);
-        postlisview.setAdapter(adapter);
+        adapter = new Adapter_Post(publicaciones,this);
+        //postlisview.setAdapter(adapter);
 
         Query qry = new DBFirebase().get_user_posts(profile_uid);
         qry.addValueEventListener(new Post_listener(adapter,publicaciones));
@@ -136,6 +137,7 @@ public class Profile extends AppCompatActivity implements ValueEventListener{
     public void onCancelled(DatabaseError databaseError) {
 
     }
+
 
 
 

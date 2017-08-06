@@ -193,7 +193,7 @@ public class Edit_profile extends AppCompatActivity implements ValueEventListene
 
         switch (id){
             case android.R.id.home:
-                Intent intent = new Intent(this,Profile.class);
+                Intent intent = new Intent(this,Perfil.class);
                 intent.putExtra("uid", Session.getUid());
                 startActivity(intent);
             break;

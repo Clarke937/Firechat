@@ -8,15 +8,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.eretana.firechat.Profile;
+import com.eretana.firechat.Perfil;
 import com.eretana.firechat.R;
 import com.eretana.firechat.models.Friend;
 
 import java.util.List;
-
-/**
- * Created by Edgar on 28/6/2017.
- */
 
 public class Adapter_Search extends BaseAdapter {
 
@@ -61,7 +57,7 @@ public class Adapter_Search extends BaseAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, Profile.class);
+                Intent intent = new Intent(context, Perfil.class);
                 intent.putExtra("uid",friend.getUid());
                 context.startActivity(intent);
             }

@@ -3,6 +3,8 @@ package com.eretana.firechat.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.media.Image;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,58 +28,59 @@ import java.util.List;
  * Created by Edgar on 3/7/2017.
  */
 
-public class Adapter_Post extends BaseAdapter {
+public class Adapter_Post extends RecyclerView.Adapter<Adapter_Post.VHolder>{
 
     private List<Post> publicaciones;
     private Context context;
-    private Bitmap bitmap;
 
-    public Adapter_Post(List<Post> publicaciones, Context c, Bitmap b) {
+    public Adapter_Post(List<Post> publicaciones, Context context) {
         this.publicaciones = publicaciones;
-        this.context = c;
-        this.bitmap = b;
+        this.context = context;
     }
 
     @Override
-    public int getCount() {
+    public VHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(context).inflate(R.layout.item_post,parent,false);
+        return new VHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(VHolder holder, int position) {
+        Post post = publicaciones.get(position);
+        holder.civ.setImageBitmap(post.getImage());
+        holder.tv_title.setText(post.getTitle());
+
+        if(post.getType() == Post.TYPES.TEXT){
+            holder.tv_text.setVisibility(View.VISIBLE);
+            holder.tv_text.setText(post.getText());
+        }else{
+
+        }
+    }
+
+    @Override
+    public int getItemCount() {
         return publicaciones.size();
     }
 
-    @Override
-    public Object getItem(int position) {
-        return publicaciones.get(position);
-    }
+    public class VHolder extends RecyclerView.ViewHolder{
 
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
+        private CircularImageView civ;
+        private TextView tv_title;
+        private ImageView imgview;
+        private TextView tv_text;
+        private FloatingActionButton fab1,fab2;
 
-    @Override
-    public View getView(int position, View view, ViewGroup parent) {
-
-        Post post = publicaciones.get(position);
-
-        if(view == null){
-            view = LayoutInflater.from(context).inflate(R.layout.item_post,parent,false);
+        public VHolder(View view) {
+            super(view);
+            this.civ = (CircularImageView) view.findViewById(R.id.postitem_civ);
+            this.tv_title = (TextView) view.findViewById(R.id.postitem_title);
+            this.imgview = (ImageView) view.findViewById(R.id.postitem_image);
+            this.tv_text = (TextView) view.findViewById(R.id.postitem_text);
         }
 
-        TextView title = (TextView) view.findViewById(R.id.postitem_title);
-        CircularImageView civ = (CircularImageView) view.findViewById(R.id.postitem_civ);
-        TextView text = (TextView) view.findViewById(R.id.postitem_text);
-        ImageView imgv = (ImageView) view.findViewById(R.id.postitem_image);
 
-        if(post.getType() == Post.TYPES.TEXT){
-            text.setVisibility(View.VISIBLE);
-            text.setText(post.getText());
-        }else{
-            imgv.setVisibility(View.VISIBLE);
-            imgv.setImageBitmap(post.getImage());
-        }
 
-        civ.setImageBitmap(bitmap);
-        title.setText(post.getTitle());
-
-        return view;
     }
+
 }

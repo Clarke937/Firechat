@@ -30,7 +30,9 @@ public class SQLFriends extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        String DELETE = "DROP TABLE IF EXISTS Friends";
+        db.execSQL(DELETE);
+        onCreate(db);
     }
 
     public void insert(Friend friend){
@@ -46,8 +48,7 @@ public class SQLFriends extends SQLiteOpenHelper {
 
     public Cursor select(){
         String query = "Select * from Friends";
-        Cursor c = sql.rawQuery(query,null);
-        return c;
+        return sql.rawQuery(query,null);
     }
 
     public void showConsole(){
@@ -60,6 +61,8 @@ public class SQLFriends extends SQLiteOpenHelper {
             Log.e("EMAIL: ",c.getString(2));
             Log.e("------------","--------------------");
         }
+
+        c.close();
     }
 
     public void delete(String uid){

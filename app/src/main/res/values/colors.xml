@@ -17,5 +17,6 @@
     <color name="divider">#BDBDBD</color>
     <color name="colorHell">#666</color>
     <color name="colorGreen">#27ae60</color>
+    <color name="transparente">@android:color/transparent</color>
 
 </resources>
