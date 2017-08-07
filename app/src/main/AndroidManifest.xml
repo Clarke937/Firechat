@@ -98,13 +98,23 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.eretana.firechat.Miniapp_lovefinder" />
         </activity>
-        <activity android:name=".Perfil"
+        <activity
+            android:name=".Perfil"
             android:label="Perfil"
             android:parentActivityName=".Application"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.eretana.firechat.Application"/>
+                android:value="com.eretana.firechat.Application" />
+        </activity>
+        <activity
+            android:name=".NewPost"
+            android:label="@string/title_activity_new_post"
+            android:parentActivityName=".Perfil"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eretana.firechat.Perfil" />
         </activity>
     </application>
 

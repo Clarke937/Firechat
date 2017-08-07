@@ -27,6 +27,7 @@ import com.eretana.firechat.listeners.Chatroom_listener;
 import com.eretana.firechat.listeners.Request_listener;
 import com.eretana.firechat.models.Constants;
 import com.eretana.firechat.models.Session;
+import com.eretana.firechat.utils.Launcher_Activity;
 import com.eretana.firechat.utils.Timestamp_utils;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.StorageReference;
@@ -144,6 +145,10 @@ public class Perfil extends AppCompatActivity {
 
             case R.id.action_add_friend:
                 friend_request();
+            break;
+
+            case R.id.action_new_post:
+                new Launcher_Activity(this).goNewPost();
             break;
 
         }

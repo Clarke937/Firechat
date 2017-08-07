@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.eretana.firechat.Perfil;
 import com.eretana.firechat.R;
 import com.eretana.firechat.models.Friend;
+import com.eretana.firechat.utils.Launcher_Activity;
 
 import java.util.List;
 
@@ -57,9 +58,10 @@ public class Adapter_Search extends BaseAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, Perfil.class);
+                /*Intent intent = new Intent(context, Perfil.class);
                 intent.putExtra("uid",friend.getUid());
-                context.startActivity(intent);
+                context.startActivity(intent);*/
+                new Launcher_Activity(context).goPerfil(friend.getUid());
             }
         });
 

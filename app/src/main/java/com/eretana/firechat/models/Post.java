@@ -17,6 +17,9 @@ public class Post {
     private String text;
     private Bitmap image;
     private TYPES type;
+    private String emoji;
+    private int likes;
+    private String imageurl;
 
 
     public Post() {
@@ -76,5 +79,29 @@ public class Post {
 
     public void setType(TYPES type) {
         this.type = type;
+    }
+
+    public String getEmoji() {
+        return emoji;
+    }
+
+    public void setEmoji(String emoji) {
+        this.emoji = emoji;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public String getImageurl() {
+        return imageurl;
+    }
+
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
     }
 }

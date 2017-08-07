@@ -2,10 +2,14 @@ package com.eretana.firechat.database;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.annotation.NonNull;
 
+import com.eretana.firechat.models.Post;
 import com.eretana.firechat.models.Request;
 import com.eretana.firechat.models.Session;
+import com.eretana.firechat.utils.MyBitmap;
 import com.eretana.firechat.utils.Timestamp_utils;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -14,6 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.sql.Timestamp;
 import java.util.Map;
@@ -173,5 +179,28 @@ public class DBFirebase {
         return reference.child("users");
     }
 
+
+    public void new_post(Post p){
+        reference = reference.child("posts").child(Session.getUid()).push();
+        Map<String,Object> data = new TreeMap<>();
+
+        data.put("title",p.getTitle());
+        data.put("emoji",p.getEmoji());
+        data.put("text",p.getText());
+        data.put("timestamp",Timestamp_utils.current_time());
+        data.put("date",Timestamp_utils.current_date());
+        data.put("likes",0);
+
+        if(p.getType() == Post.TYPES.TEXT){
+            data.put("type","text");
+        }else{
+            data.put("type","image");
+            data.put("imageurl",reference.getKey() + ".jpg");
+            StorageReference storage = new DBStorage().get_post_image(reference.getKey());
+            storage.putBytes(MyBitmap.getBytes(p.getImage()));
+        }
+
+        reference.setValue(data);
+    }
 
 }

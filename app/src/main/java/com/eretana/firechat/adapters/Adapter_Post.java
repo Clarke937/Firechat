@@ -11,14 +11,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.eretana.firechat.Post_viewer;
 import com.eretana.firechat.R;
+import com.eretana.firechat.database.DBStorage;
+import com.eretana.firechat.models.Constants;
+import com.eretana.firechat.models.Emojis;
 import com.eretana.firechat.models.Post;
+import com.eretana.firechat.utils.MyBitmap;
 import com.eretana.firechat.utils.Timestamp_utils;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.StorageReference;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
@@ -40,22 +47,40 @@ public class Adapter_Post extends RecyclerView.Adapter<Adapter_Post.VHolder>{
 
     @Override
     public VHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_post,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_post2,parent,false);
         return new VHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(VHolder holder, int position) {
+    public void onBindViewHolder(final VHolder holder, int position) {
         Post post = publicaciones.get(position);
-        holder.civ.setImageBitmap(post.getImage());
-        holder.tv_title.setText(post.getTitle());
+        holder.title.setText(post.getTitle());
+
+        long miliseconds = Timestamp_utils.current_time() - post.getTimestamp();
+        holder.timer.setText("Publicado hace: " + Timestamp_utils.elapsed_time(miliseconds));
+        holder.emojiview.setImageDrawable(new Emojis(context).getEmoji(post.getEmoji()));
 
         if(post.getType() == Post.TYPES.TEXT){
-            holder.tv_text.setVisibility(View.VISIBLE);
-            holder.tv_text.setText(post.getText());
+            holder.text.setVisibility(View.VISIBLE);
+            holder.text.setText(post.getText());
         }else{
+            holder.imageview.setVisibility(View.VISIBLE);
+            if(post.getText().length() > 0){
+                holder.text.setVisibility(View.VISIBLE);
+                holder.text.setText(post.getText());
+            }
+
+            StorageReference storage = new DBStorage().get_post_image(post.getId());
+            storage.getBytes(Constants.MEGABYTE * 2).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                @Override
+                public void onSuccess(byte[] bytes) {
+                    holder.imageview.setImageBitmap(MyBitmap.getBitmap(bytes));
+                    notifyDataSetChanged();
+                }
+            });
 
         }
+
     }
 
     @Override
@@ -65,22 +90,19 @@ public class Adapter_Post extends RecyclerView.Adapter<Adapter_Post.VHolder>{
 
     public class VHolder extends RecyclerView.ViewHolder{
 
-        private CircularImageView civ;
-        private TextView tv_title;
-        private ImageView imgview;
-        private TextView tv_text;
-        private FloatingActionButton fab1,fab2;
+        ImageView emojiview,imageview;
+        TextView title,timer,text;
+        Button btnlikes,btncomments;
+
 
         public VHolder(View view) {
             super(view);
-            this.civ = (CircularImageView) view.findViewById(R.id.postitem_civ);
-            this.tv_title = (TextView) view.findViewById(R.id.postitem_title);
-            this.imgview = (ImageView) view.findViewById(R.id.postitem_image);
-            this.tv_text = (TextView) view.findViewById(R.id.postitem_text);
+            emojiview = (ImageView) view.findViewById(R.id.post2_emoji);
+            imageview = (ImageView) view.findViewById(R.id.post2_image);
+            title = (TextView) view.findViewById(R.id.post2_title);
+            timer = (TextView) view.findViewById(R.id.post2_timer);
+            text = (TextView) view.findViewById(R.id.post2_text);
         }
-
-
-
     }
 
 }

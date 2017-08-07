@@ -144,6 +144,7 @@
     <string name="title_activity_post_viewer">Post_viewer</string>
     <string name="title_activity_edit_profile">Edit_profile</string>
     <string name="title_activity_miniapp_lovefinder">Miniapp_lovefinder</string>
+    <string name="title_activity_new_post">NewPost</string>
 
 
 </resources>

@@ -20,5 +20,10 @@ public class DBStorage {
         return storage.child("profile_pictures").child(uid + ".jpg");
     }
 
+    public StorageReference get_post_image(String key){
+        return storage.child("post_pictures").child(key + ".jpg");
+    }
+
+
 
 }
