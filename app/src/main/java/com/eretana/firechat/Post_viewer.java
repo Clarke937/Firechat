@@ -114,14 +114,14 @@ public class Post_viewer extends AppCompatActivity implements ValueEventListener
 
             for (DataSnapshot data : dataSnapshot.child("comments").getChildren()){
 
-                Comment comment = new Comment();
+                /*Comment comment = new Comment();
                 comment.setComment_id(data.getKey());
                 comment.setUserid(data.child("by").getValue().toString());
                 comment.setDate(data.child("date").getValue().toString());
                 comment.setText(data.child("text").getValue().toString());
                 comment.setTimestamp(Long.parseLong(data.child("timestamp").getValue().toString()));
                 comment.setUsername(data.child("username").getValue().toString());
-                comments.add(comment);
+                comments.add(comment);*/
             }
 
             adapter.notifyDataSetChanged();

@@ -18,8 +18,9 @@ public class Post {
     private Bitmap image;
     private TYPES type;
     private String emoji;
-    private int likes;
+    private long likes;
     private String imageurl;
+    private long comments;
 
 
     public Post() {
@@ -89,11 +90,11 @@ public class Post {
         this.emoji = emoji;
     }
 
-    public int getLikes() {
+    public long getLikes() {
         return likes;
     }
 
-    public void setLikes(int likes) {
+    public void setLikes(long likes) {
         this.likes = likes;
     }
 
@@ -103,5 +104,13 @@ public class Post {
 
     public void setImageurl(String imageurl) {
         this.imageurl = imageurl;
+    }
+
+    public long getComments() {
+        return comments;
+    }
+
+    public void setComments(long comments) {
+        this.comments = comments;
     }
 }

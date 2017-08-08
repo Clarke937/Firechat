@@ -22,7 +22,9 @@ import com.eretana.firechat.database.DBStorage;
 import com.eretana.firechat.models.Constants;
 import com.eretana.firechat.models.Emojis;
 import com.eretana.firechat.models.Post;
+import com.eretana.firechat.utils.Launcher_Activity;
 import com.eretana.firechat.utils.MyBitmap;
+import com.eretana.firechat.utils.MyNums;
 import com.eretana.firechat.utils.Timestamp_utils;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.StorageReference;
@@ -52,8 +54,8 @@ public class Adapter_Post extends RecyclerView.Adapter<Adapter_Post.VHolder>{
     }
 
     @Override
-    public void onBindViewHolder(final VHolder holder, int position) {
-        Post post = publicaciones.get(position);
+    public void onBindViewHolder(final VHolder holder, final int position) {
+        final Post post = publicaciones.get(position);
         holder.title.setText(post.getTitle());
 
         long miliseconds = Timestamp_utils.current_time() - post.getTimestamp();
@@ -78,9 +80,17 @@ public class Adapter_Post extends RecyclerView.Adapter<Adapter_Post.VHolder>{
                     notifyDataSetChanged();
                 }
             });
-
         }
 
+        holder.btncomments.setText(MyNums.Resume(post.getComments()));
+        holder.btncomments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Launcher_Activity(context).goViewPost(post.getUid(),post.getId());
+            }
+        });
+
+        holder.btnlikes.setText(MyNums.Resume(post.getLikes()));
     }
 
     @Override
@@ -102,6 +112,10 @@ public class Adapter_Post extends RecyclerView.Adapter<Adapter_Post.VHolder>{
             title = (TextView) view.findViewById(R.id.post2_title);
             timer = (TextView) view.findViewById(R.id.post2_timer);
             text = (TextView) view.findViewById(R.id.post2_text);
+
+            btnlikes = (Button) view.findViewById(R.id.post2_likes);
+            btncomments = (Button) view.findViewById(R.id.post2_comments);
+
         }
     }
 
